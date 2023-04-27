@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8321244547233046460}
   m_Layer: 0
   m_Name: Darkblue Dot
-  m_TagString: Untagged
+  m_TagString: Darkblue Dot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b01490b2a78243b40a7d1f83cdecd263, type: 3}
-  m_Color: {r: 0.16862746, g: 0.21568629, b: 0.29411766, a: 1}
+  m_Color: {r: 0.030037368, g: 0.28410354, b: 0.7075472, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -114,4 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc6fdce1c10b7b46a342586d3526eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  column: 0
+  row: 0
+  targetX: 0
+  targetY: 0
+  isMatched: 0
   swipeAngle: 0
