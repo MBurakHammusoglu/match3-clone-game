@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackgroundTile : MonoBehaviour
 {
+    
     public GameObject[] dots;
 
     // Start is called before the first frame update
@@ -24,4 +25,5 @@ public class BackgroundTile : MonoBehaviour
         dot.transform.parent = this.transform;
         dot.name = this.gameObject.name;
     }
+    
 }
