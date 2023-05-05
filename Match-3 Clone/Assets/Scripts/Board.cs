@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public enum GameState
 {
     wait,
@@ -9,6 +11,9 @@ public enum GameState
 
 public class Board : MonoBehaviour
 {
+    public Text scoreText;
+    public int score = 0;
+    AudioSource crushSound;
     public GameState currentState=GameState.move;
     public int width;
     public int height;
@@ -25,7 +30,14 @@ public class Board : MonoBehaviour
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, height];
         allDots = new GameObject[width, height];
+        
         SetUp();
+        crushSound = GetComponent<AudioSource>();
+        
+        scoreText.text = "Score = 0";
+
+
+        
     }
 
     private void SetUp()
@@ -100,6 +112,11 @@ public class Board : MonoBehaviour
             findMatches.currentMatches.Remove(allDots[column, row]);
             GameObject paricle=Instantiate(destroyEffect, allDots[column, row].transform.position, Quaternion.identity);
             Destroy(paricle, .5f);
+            crushSound.Play();
+            score += 10;
+            Debug.Log(score);
+            scoreText.text = "Score" + "=" +score.ToString();
+
             Destroy(allDots[column, row]);
             allDots[column, row] = null;
         }
